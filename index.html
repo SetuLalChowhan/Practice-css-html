@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <head>
+      <!-- Font Awesome CDN -->
+      <link
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+        rel="stylesheet"
+      />
+    </head>
+
+    <title>Document</title>
+    <style>
+      body {
+        margin: 0px;
+        padding: 0px;
+        box-sizing: border-box;
+        color: orange;
+      }
+
+      .container {
+        max-width: 1320px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      .header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: black;
+
+        padding: 16px 100px;
+      }
+      .container {
+        max-width: 1320px;
+        margin-left: auto;
+        margin-right: auto;
+
+        margin-bottom: 100px;
+      }
+
+      .logo {
+        font-size: 30px;
+      }
+
+      .nav-links {
+        display: flex;
+        gap: 20px;
+        font-size: 20px;
+      }
+
+      .nav-links a {
+        color: white;
+        text-decoration: none;
+        font-size: 18px;
+        padding: 0px 4px;
+        transition: 0.3s ease;
+        padding: 4px 12px;
+      }
+      .hamburger {
+        display: none;
+      }
+
+      .nav-links a:hover {
+        background-color: white;
+        color: black;
+        /* You can adjust the padding on hover to make it more noticeable */
+      }
+
+      #toogle_button1 {
+        display: none;
+      }
+      main {
+        padding: 40px;
+      }
+
+      @media only screen and (min-width: 320px) and (max-width: 1200px) {
+        .header {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          background-color: black;
+
+          padding: 16px 20px;
+        }
+
+        .nav-links {
+          display: none;
+        }
+        .hamburger-size {
+          width: 40px;
+          height: 40px;
+        }
+        .hamburger {
+          display: flex;
+        }
+        .nav-links {
+          display: flex;
+          position: absolute;
+          top: 0;
+          left: -320px;
+          height: 89vh;
+          width: 320px;
+          flex-direction: column;
+          background-color: black;
+          gap: 20px;
+          z-index: 1;
+          justify-content: start;
+          transition: left 0.3s ease;
+          padding-top: 100px;
+          width: 300px;
+          box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+          background-color: white;
+        }
+        .nav-links.active {
+          left: 0px;
+        }
+        .nav-links a {
+          color: black;
+          text-decoration: none;
+          font-size: 18px;
+          padding: 0px 4px;
+          transition: 0.3s ease;
+          padding: 4px 12px;
+          text-align: center;
+          padding: 20px 0px;
+        }
+        .nav-links a:hover {
+          background-color: black;
+          color: white;
+          /* You can adjust the padding on hover to make it more noticeable */
+        }
+      }
+
+      .cards-all {
+        overflow: hidden;
+        margin-top: 60px;
+        display: flex;
+        gap: 30px;
+      }
+
+      .slide_card {
+        display: flex;
+        align-items: center;
+        animation: slide 10s infinite linear;
+        gap: 10px;
+        height: auto;
+      }
+
+      @keyframes slide {
+        0% {
+          transform: translateX(0);
+        }
+        100% {
+          transform: translateX(-50%);
+        }
+      }
+
+      .card {
+        padding: 16px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 14px;
+        box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+        width: 200px;
+      }
+
+      .card img {
+        width: 100%;
+        height: 250px;
+        object-fit: cover;
+      }
+
+      .card p {
+        font-size: 18px;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <header class="header">
+      <a class="logo"> HimySetu </a>
+      <div class="nav-links">
+        <a href="#">Home</a>
+        <a href="#">About</a>
+        <a href="#"> Sign Up</a>
+      </div>
+
+      <div class="hamburger" id="toogle_button">
+        <i class="fa-solid fa-bars fa-2x"></i>
+      </div>
+      <div id="toogle_button1">
+        <i class="fa-solid fa-xmark fa-2x"></i>
+      </div>
+    </header>
+
+    <main>
+      <section class="">
+        <div class="">
+          <!-- cards all -->
+          <div class="cards-all">
+            <div class="slide_card">
+              <div class="card">
+                <img
+                  src="https://via.placeholder.com/150"
+                  alt="Image 1"
+                  class="card-img"
+                />
+
+                <h1>Hi my name is Setu</h1>
+
+                <p>
+                  Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                  Harum itaque minima suscipit blanditiis iusto esse eius natus,
+                  excepturi nulla omnis odio amet incidunt, laboriosam saepe!
+                  Laborum quod ad, exercitationem mollitia recusandae nostrum,
+                  molestias consectetur alias possimus optio, blanditiis dolor
+                  quo!
+                </p>
+              </div>
+              <div class="card">
+                <img
+                  src="https://via.placeholder.com/150"
+                  alt="Image 1"
+                  class="card-img"
+                />
+
+                <h1>Hi my name is Setu</h1>
+
+                <p>
+                  Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                  Harum itaque minima suscipit blanditiis iusto esse eius natus,
+                  excepturi nulla omnis odio amet incidunt, laboriosam saepe!
+                  Laborum quod ad, exercitationem mollitia recusandae nostrum,
+                  molestias consectetur alias possimus optio, blanditiis dolor
+                  quo!
+                </p>
+              </div>
+              <div class="card">
+                <img
+                  src="https://via.placeholder.com/150"
+                  alt="Image 1"
+                  class="card-img"
+                />
+
+                <h1>Hi my name is Setu</h1>
+
+                <p>
+                  Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                  Harum itaque minima suscipit blanditiis iusto esse eius natus,
+                  excepturi nulla omnis odio amet incidunt, laboriosam saepe!
+                  Laborum quod ad, exercitationem mollitia recusandae nostrum,
+                  molestias consectetur alias possimus optio, blanditiis dolor
+                  quo!
+                </p>
+              </div>
+              <div class="card">
+                <img
+                  src="https://via.placeholder.com/150"
+                  alt="Image 1"
+                  class="card-img"
+                />
+
+                <h1>Hi my name is Setu</h1>
+
+                <p>
+                  Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                  Harum itaque minima suscipit blanditiis iusto esse eius natus,
+                  excepturi nulla omnis odio amet incidunt, laboriosam saepe!
+                  Laborum quod ad, exercitationem mollitia recusandae nostrum,
+                  molestias consectetur alias possimus optio, blanditiis dolor
+                  quo!
+                </p>
+              </div>
+              <div class="card">
+                <img
+                  src="https://via.placeholder.com/150"
+                  alt="Image 1"
+                  class="card-img"
+                />
+
+                <h1>Hi my name is Setu</h1>
+
+                <p>
+                  Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                  Harum itaque minima suscipit blanditiis iusto esse eius natus,
+                  excepturi nulla omnis odio amet incidunt, laboriosam saepe!
+                  Laborum quod ad, exercitationem mollitia recusandae nostrum,
+                  molestias consectetur alias possimus optio, blanditiis dolor
+                  quo!
+                </p>
+              </div>
+              <div class="card">
+                <img
+                  src="https://via.placeholder.com/150"
+                  alt="Image 1"
+                  class="card-img"
+                />
+
+                <h1>Hi my name is Setu</h1>
+
+                <p>
+                  Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                  Harum itaque minima suscipit blanditiis iusto esse eius natus,
+                  excepturi nulla omnis odio amet incidunt, laboriosam saepe!
+                  Laborum quod ad, exercitationem mollitia recusandae nostrum,
+                  molestias consectetur alias possimus optio, blanditiis dolor
+                  quo!
+                </p>
+              </div>
+              <div class="card">
+                <img
+                  src="https://via.placeholder.com/150"
+                  alt="Image 1"
+                  class="card-img"
+                />
+
+                <h1>Hi my name is Setu</h1>
+
+                <p>
+                  Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                  Harum itaque minima suscipit blanditiis iusto esse eius natus,
+                  excepturi nulla omnis odio amet incidunt, laboriosam saepe!
+                  Laborum quod ad, exercitationem mollitia recusandae nostrum,
+                  molestias consectetur alias possimus optio, blanditiis dolor
+                  quo!
+                </p>
+              </div>
+              <div class="card">
+                <img
+                  src="https://via.placeholder.com/150"
+                  alt="Image 1"
+                  class="card-img"
+                />
+
+                <h1>Hi my name is Setu</h1>
+
+                <p>
+                  Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                  Harum itaque minima suscipit blanditiis iusto esse eius natus,
+                  excepturi nulla omnis odio amet incidunt, laboriosam saepe!
+                  Laborum quod ad, exercitationem mollitia recusandae nostrum,
+                  molestias consectetur alias possimus optio, blanditiis dolor
+                  quo!
+                </p>
+              </div>
+              <div class="card">
+                <img
+                  src="https://via.placeholder.com/150"
+                  alt="Image 1"
+                  class="card-img"
+                />
+
+                <h1>Hi my name is Setu</h1>
+
+                <p>
+                  Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                  Harum itaque minima suscipit blanditiis iusto esse eius natus,
+                  excepturi nulla omnis odio amet incidunt, laboriosam saepe!
+                  Laborum quod ad, exercitationem mollitia recusandae nostrum,
+                  molestias consectetur alias possimus optio, blanditiis dolor
+                  quo!
+                </p>
+              </div>
+              <div class="card">
+                <img
+                  src="https://via.placeholder.com/150"
+                  alt="Image 1"
+                  class="card-img"
+                />
+
+                <h1>Hi my name is Setu</h1>
+
+                <p>
+                  Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                  Harum itaque minima suscipit blanditiis iusto esse eius natus,
+                  excepturi nulla omnis odio amet incidunt, laboriosam saepe!
+                  Laborum quod ad, exercitationem mollitia recusandae nostrum,
+                  molestias consectetur alias possimus optio, blanditiis dolor
+                  quo!
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <script src="./main.js"></script>
+  </body>
+</html>
