@@ -55,18 +55,28 @@
         color: white;
         text-decoration: none;
         font-size: 18px;
-        padding: 0px 4px;
-        transition: 0.3s ease;
         padding: 4px 12px;
+        position: relative; 
+        transition: color 0.3s ease; 
       }
-      .hamburger {
-        display: none;
+
+      .nav-links a::after {
+        content: "";
+        position: absolute;
+        bottom: 0; /* Aligns the border at the bottom */
+        left: 0;
+        width: 0; /* Starts as hidden */
+        height: 2px; /* Thickness of the border */
+        background-color: white;
+        transition: width 0.3s ease; /* Smoothly expands the border */
       }
 
       .nav-links a:hover {
-        background-color: white;
-        color: black;
-        /* You can adjust the padding on hover to make it more noticeable */
+        color: white;
+      }
+
+      .nav-links a:hover::after {
+        width: 100%; /* Expands the border to full width */
       }
 
       #toogle_button1 {
@@ -74,6 +84,9 @@
       }
       main {
         padding: 40px;
+      }
+      .hamburger{
+        display: none;
       }
 
       @media only screen and (min-width: 320px) and (max-width: 1200px) {
