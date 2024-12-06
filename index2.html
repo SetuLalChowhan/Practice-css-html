@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dropdown Navigation</title>
+    <style>
+      /* Basic styling for the header */
+      .header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 20px;
+        background-color: #f8f8f8;
+      }
+
+      .nav-links {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+      }
+
+      .nav-links a {
+        text-decoration: none;
+        color: #333;
+        font-size: 16px;
+        padding: 5px 10px;
+      }
+
+      .nav-links a:hover {
+        color: #007bff;
+      }
+
+      /* Dropdown styles */
+      .dropdown {
+        position: relative;
+      }
+
+      .dropdown-toggle {
+        cursor: pointer;
+      }
+
+      .dropdown-menu {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        background-color: #fff;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        z-index: 10;
+        min-width: 150px;
+      }
+
+      .dropdown-menu a {
+        display: block;
+        padding: 10px;
+        text-decoration: none;
+        color: #333;
+        font-size: 14px;
+      }
+
+      .dropdown-menu a:hover {
+        background-color: #f0f0f0;
+        color: #007bff;
+      }
+
+      /* Show the dropdown menu when the dropdown is active or hovered */
+      .dropdown:hover .dropdown-menu,
+      .dropdown.active .dropdown-menu {
+        display: block;
+      }
+
+      /* Hamburger Menu (for styling only) */
+      .hamburger,
+      #toogle_button1 {
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <header class="header">
+      <a class="logo">HimySetu</a>
+      <div class="nav-links">
+        <a href="#">Home</a>
+
+        <!-- Dropdown for About -->
+        <div class="dropdown">
+          <a href="#" class="dropdown-toggle">About</a>
+          <div class="dropdown-menu">
+            <a href="#">Our Team</a>
+            <a href="#">Our Mission</a>
+            <a href="#">Contact Us</a>
+          </div>
+        </div>
+
+        <a href="#">Sign Up</a>
+      </div>
+
+      <div class="hamburger" id="toogle_button">
+        <i class="fa-solid fa-bars fa-2x"></i>
+      </div>
+      <div id="toogle_button1">
+        <i class="fa-solid fa-xmark fa-2x"></i>
+      </div>
+    </header>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const dropdown = document.querySelector(".dropdown");
+        const dropdownToggle = document.querySelector(".dropdown-toggle");
+
+        dropdownToggle.addEventListener("click", (e) => {
+          e.preventDefault();
+          dropdown.classList.toggle("active");
+        });
+
+        // Close the dropdown if clicked outside
+        document.addEventListener("click", (e) => {
+          if (!dropdown.contains(e.target)) {
+            dropdown.classList.remove("active");
+          }
+        });
+      });
+    </script>
+  </body>
+</html>
