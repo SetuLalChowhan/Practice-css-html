@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Advanced Animations Example</title>
+    <style>
+      /* General Reset */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      /* Body Styling */
+      body {
+        font-family: Arial, Helvetica, sans-serif;
+        background: linear-gradient(135deg, #e0eafc, #cfdef3);
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        gap: 20px;
+      }
+
+      /* Common Button Styles for Reuse */
+      .btn {
+        background: #007bff;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        font-size: 16px;
+        cursor: pointer;
+        transition: transform 0.2s ease, background 0.3s ease;
+      }
+
+      /* Button Hover Effect */
+      .btn:hover {
+        transform: translateX(5px);
+        background-color: #0056b3;
+      }
+
+      /* Navigation Menu - Animated Underline Example */
+      .nav-links {
+        display: flex;
+        justify-content: space-around;
+        width: 80%;
+        margin-bottom: 30px;
+      }
+
+      .nav-links a {
+        color: #333;
+        text-decoration: none;
+        font-size: 18px;
+        position: relative;
+        padding: 5px 15px;
+        transition: transform 0.3s ease;
+      }
+
+      /* Smooth Animated Underline on Hover */
+      .nav-links a::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        height: 3px;
+        width: 0;
+        background-color: #333;
+        transition: transform 0.3s ease;
+      }
+
+      .nav-links a:hover::after {
+        transform: translateX(100%);
+      }
+
+      /* Section with TranslateY hover effect */
+      .animated-section {
+        height: 200px;
+        background: teal;
+        width: 80%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        font-size: 22px;
+        border-radius: 10px;
+        transition: transform 0.3s ease;
+      }
+
+      .animated-section:hover {
+        transform: translateY(-10px);
+      }
+
+      /* Card Hover Animation with Translate and Scale */
+      .card-container {
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+        margin: 20px 0;
+        width: 90%;
+      }
+
+      .card {
+        height: 150px;
+        width: 150px;
+        background: #333;
+        color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 8px;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+      }
+
+      .card:hover {
+        transform: translateY(-10px) scale(1.1);
+        box-shadow: 0 8px 15px rgba(0, 0, 0, 0.4);
+      }
+
+      /* Modal example with transform animations */
+      .modal-container {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(207, 5, 5, 0.6);
+        display: none;
+        justify-content: center;
+        align-items: center;
+        transition: opacity 0.3s ease;
+      }
+
+      .modal {
+        background: white;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        transform: scale(0.8);
+        transition: transform 0.3s ease;
+      }
+
+      /* Modal Trigger */
+      .open-modal-btn {
+        margin-top: 10px;
+      }
+
+      .modal-container.show {
+        display: flex;
+        opacity: 1;
+      }
+
+      .modal-container.show .modal {
+        transform: scale(1);
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Navigation with hover effect -->
+    <nav class="nav-links">
+      <a href="#">Home</a>
+      <a href="#">About</a>
+      <a href="#">Services</a>
+      <a href="#">Contact</a>
+    </nav>
+
+    <!-- Button Section with Translate Effect -->
+    <div>
+      <button class="btn">Click Me</button>
+    </div>
+
+    <!-- Animated Section with TranslateY Hover Effect -->
+    <div class="animated-section">Hover Over Me!</div>
+
+    <!-- Card Section with Hover Effects -->
+    <div class="card-container">
+      <div class="card">Card 1</div>
+      <div class="card">Card 2</div>
+      <div class="card">Card 3</div>
+      <div class="card">Card 4</div>
+    </div>
+
+    <!-- Modal Example -->
+    <div class="modal-container">
+      <div class="modal">
+        <p>This is a modal popup</p>
+        <button class="btn">Close</button>
+      </div>
+    </div>
+
+    <!-- Button to show Modal -->
+    <button class="btn open-modal-btn">Open Modal</button>
+
+    <script>
+      const modalContainer = document.querySelector(".modal-container");
+      const openModal = document.querySelector(".open-modal-btn");
+      const closeModal = document.querySelector(".modal button");
+
+      openModal.addEventListener("click", () => {
+        modalContainer.classList.add("show");
+      });
+
+      closeModal.addEventListener("click", () => {
+        modalContainer.classList.remove("show");
+      });
+    </script>
+  </body>
+</html>
